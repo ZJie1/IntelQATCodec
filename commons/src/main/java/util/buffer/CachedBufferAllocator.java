@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package com.intel.qat.util.buffer;
+package util.buffer;
 
 import com.intel.qat.jni.QatCodecJNI;
 

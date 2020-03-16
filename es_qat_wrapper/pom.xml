@@ -24,6 +24,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>es_qat_wrapper</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>Elastic_Search_wrapper</module>
+        <module>Lucene_wrapper</module>
+    </modules>
     <properties>
 
         <!-- Build Properties -->

@@ -52,6 +52,7 @@
     <module>carbondata_qat_wrapper</module>
     <module>common</module>
     <module>es_qat_wrapper</module>
+      <module>commons</module>
   </modules>
 
 </project>

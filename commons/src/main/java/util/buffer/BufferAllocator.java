@@ -15,10 +15,20 @@
  * limitations under the License.
  */
 
-package com.intel.qat.util.buffer;
+package util.buffer;
 
-public interface BufferAllocatorFactory {
+import java.nio.ByteBuffer;
 
-    BufferAllocator getBufferAllocator(int minSize);
+/**
+ * BufferAllocator interface. The implementation of this interface must be thread-safe
+ */
+public interface BufferAllocator {
+
+    ByteBuffer allocateDirectByteBuffer(boolean useNativeBuffer, int size, int align);
+
+    void releaseDirectByteBuffer(ByteBuffer buffer);
+
+    byte[] allocateByteArray(int size);
+
+    void releaseByteArray(byte[] buffer);
 }
-
