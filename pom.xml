@@ -56,7 +56,9 @@
     <module>spark_qat_wrapper</module>
     <module>carbondata_qat_wrapper</module>
     <module>kafka_qat_wrapper</module>
-    <module>assembly</module>
+      <module>common</module>
+      <module>elasticsearch_qat_wrapper</module>
+      <!--    <module>assembly</module>-->
   </modules>
 
 </project>
