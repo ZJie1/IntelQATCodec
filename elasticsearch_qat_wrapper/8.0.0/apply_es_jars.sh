@@ -29,8 +29,8 @@ ES_baseCommitID=dc6e29a949d6a68cbc57d71c9fd2a3328ed71f17
 ES_version=$1
 QATCodec_SRC_DIR=$2
 
-ES_QAT_DIR=$QATCodec_SRC_DIR/elasticsearch_qat_wrapper/8.0.0/elasticsearch
-TARGET_DIR=$QATCodec_SRC_DIR/elasticsearch_qat_wrapper/8.0.0/target
+ES_QAT_DIR=$QATCodec_SRC_DIR/es_qat_wrapper/${ES_version_base}/elasticsearch
+TARGET_DIR=$QATCodec_SRC_DIR/es_qat_wrapper/${ES_version_base}/target
 ES_SRC_DIR=$TARGET_DIR/elasticsearch
 
 
@@ -78,7 +78,7 @@ if [ "$#" -ne 2 ]; then
 fi
 
 
-check_Es_version $ES_version
+check_ES_version $ES_version
 
 if [ -d $TARGET_DIR ]; then
   echo "$TARGET_DIR is not clean"

@@ -27,8 +27,7 @@ dependencies {
   compile "junit:junit:${versions.junit}"
   compile "org.hamcrest:hamcrest:${versions.hamcrest}"
   compile "org.apache.lucene:lucene-test-framework:${versions.lucene}"
-  compile fileTree(dir: '../buildSrc/libs', includes: ['*jar'])
- // compile "org.apache.lucene:lucene-codecs:${versions.lucene}"
+  compile "org.apache.lucene:lucene-codecs:${versions.lucene}"
   compile "commons-logging:commons-logging:${versions.commonslogging}"
   compile "commons-codec:commons-codec:${versions.commonscodec}"
   compile "org.elasticsearch:securemock:${versions.securemock}"

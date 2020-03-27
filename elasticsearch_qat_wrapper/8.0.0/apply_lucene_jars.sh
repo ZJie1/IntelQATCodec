@@ -23,6 +23,7 @@ declare -a supported_Lucene_versions=("8.2.0")
 
 # Repo Address
 LUCENE_REPO=https://github.com/apache/lucene-solr.git
+ES_version_base="8.0.0"
 Lucene_version_base="8.2.0"
 Lucene_baseCommitID=e8494222be8a44678b43f907b47accbda3ebd401
 
@@ -30,8 +31,8 @@ Lucene_baseCommitID=e8494222be8a44678b43f907b47accbda3ebd401
 LUCENE_version=$1
 QATCodec_SRC_DIR=$2
 
-LUCENE_QAT_DIR=$QATCodec_SRC_DIR/elasticsearch_qat_wrapper/8.0.0/lucene-8.2.0/lucene
-TARGET_DIR=$QATCodec_SRC_DIR/elasticsearch_qat_wrapper/8.0.0/target
+LUCENE_QAT_DIR=$QATCodec_SRC_DIR/es_qat_wrapper/${ES_version_base}/lucene-${Lucene_version_base}/lucene
+TARGET_DIR=$QATCodec_SRC_DIR/es_qat_wrapper/${ES_version_base}/target
 LUCENE_SRC_DIR=$TARGET_DIR/LUCENE
 
 

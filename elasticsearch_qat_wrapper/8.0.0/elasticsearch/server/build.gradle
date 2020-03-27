@@ -83,7 +83,7 @@ dependencies {
   testRuntime project(':libs:elasticsearch-plugin-classloader')
 
   // lucene
-  /*compile "org.apache.lucene:lucene-core:${versions.lucene}"
+  //compile "org.apache.lucene:lucene-core:${versions.lucene}"
   compile "org.apache.lucene:lucene-analyzers-common:${versions.lucene}"
   compile "org.apache.lucene:lucene-backward-codecs:${versions.lucene}"
   compile "org.apache.lucene:lucene-grouping:${versions.lucene}"
@@ -97,8 +97,7 @@ dependencies {
   compile "org.apache.lucene:lucene-spatial:${versions.lucene}"
   compile "org.apache.lucene:lucene-spatial-extras:${versions.lucene}"
   compile "org.apache.lucene:lucene-spatial3d:${versions.lucene}"
-  compile "org.apache.lucene:lucene-suggest:${versions.lucene}"*/
-  compile "org.apache.lucene:lucene-spatial:${versions.lucene}"
+  compile "org.apache.lucene:lucene-suggest:${versions.lucene}"
 
   // utilities
   compile project(":libs:elasticsearch-cli")

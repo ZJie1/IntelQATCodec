@@ -104,42 +104,27 @@ we need jdk12 for Elasticsearch 8.0.0 and jdk8 for IntelQatCodec
  We need to copy these files to other places:
       
       $ sudo cp libqatcodec.so libQatCodecEs.so /lib64
-      $ cp lucene_qat_wrapper.jar elasticsearch_qat_wrapper/8.0.0/lucene-8.2.0/lucene/lib/
-      $ cp es_qat_wrapper.jar elasticsearch_qat_wrapper/8.0.0/elasticsearch/buildSrc/libs/
+      $ cp lucene_qat_wrapper.jar es_qat_wrapper/8.0.0/lucene-8.2.0/lucene/lib/
+      $ cp es_qat_wrapper.jar es_qat_wrapper/8.0.0/elasticsearch/buildSrc/libs/
 
-## III. Apply the patch     
-###1. Apply the lucene patch
-      $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0
-      $ ./apply_lucene_jars.sh 8.0.0 /path/to/IntelQATCodec
-###2. Apply the elastcsearch patch
-      $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0
-      $ ./apply_es_jars.sh 8.0.0 /path/to/IntelQATCodec
+## III. Apply the lucene patch     
 
-###IV. Build the lucene in target folder
+      $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0
+      $ ./apply_lucene_jars.sh 8.2.0 /path/to/IntelQATCodec
+
+##IV. Build the lucene in target folder
 
     $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0/target/LUCENE
     $ ant -autoproxy clean compile 
 Then we need to copy the jars to the ./elasticsearch_qat_wrapper/8.0.0/elasticsearch/buildSrc/libs/
-
-(need to be confirmed if all of these are necessary)   
-
-     lucene-analyzers-common-8.2.0-SNAPSHOT.jar
-     lucene-backward-codecs-8.2.0-SNAPSHOT.jar
+ 
      lucene-core-8.2.0-SNAPSHOT.jar
-     lucene-grouping-8.2.0-SNAPSHOT.jar
-     lucene-highlighter-8.2.0-SNAPSHOT.jar
-     lucene-join-8.2.0-SNAPSHOT.jar
-     lucene-memory-8.2.0-SNAPSHOT.jar
-     lucene-misc-8.2.0-SNAPSHOT.jar
-     lucene-queries-8.2.0-SNAPSHOT.jar
-     lucene-queryparser-8.2.0-SNAPSHOT. jar
-     lucene-sandbox-8.2.0-SNAPSHOT.jar
-     lucene-spatial3d-8.2.0-SNAPSHOT.jar                        	
-     lucene-spatial-extras-8.2.0-SNAPSHOT.jar
-     lucene-suggest-8.2.0-SNAPSHOT.jar
-     Lucene_qat_wrapper-1.0.0.jar
+     lucene_qat_wrapper.jar
+##V. Apply the elastcsearch patch
+      $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0
+      $ ./apply_es_jars.sh 8.0.0 /path/to/IntelQATCodec
 
-###IV. Build the  elasticsearch in target folder
+##VI. Build the  elasticsearch in target folder
       
       $ java -version
 To make sure the java version is 11+.(We use jdk12)
@@ -147,6 +132,3 @@ To make sure the java version is 11+.(We use jdk12)
       $ cd /path/to/IntelQATCodec/elasticsearch_qat_wrapper/8.0.0/target/elasticsearch
       $ ./gradlew :distribution:archives:linux-tar:assemble --parallel
 and then we can get the binary files in the ./distribution/archives/linux-tar/build/distributions/
-
-
-
